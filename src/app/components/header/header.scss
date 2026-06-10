@@ -1,0 +1,23 @@
+.header {
+  width: 100%;
+  background: #bfdbfe;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.right {
+  display: flex;
+  gap: 16px;
+}
+
+.nav-btn {
+  background: #1e3a8a;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}

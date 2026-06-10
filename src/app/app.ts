@@ -1,12 +1,11 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { HeaderComponent } from './components/header/header';
 
 @Component({
-  selector: 'pm-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.html',
-  styleUrl: './app.scss'
+  selector: 'app-root',
+  standalone: true,
+  imports: [RouterOutlet, HeaderComponent],
+  templateUrl: './app.html'
 })
-export class App {
-  protected readonly title = signal('Project-uek294');
-}
+export class AppComponent {}
