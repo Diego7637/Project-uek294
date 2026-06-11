@@ -1,8 +1,17 @@
 <header class="header">
-  <button class="nav-btn" routerLink="/">Home</button>
+  <button class="nav-btn" routerLink="/">Startseite</button>
 
   <div class="right">
-    <button class="nav-btn" routerLink="/products">Products</button>
-    <button class="nav-btn" routerLink="/login">Login</button>
+    <button class="nav-btn" routerLink="/categories">Kategorien</button>
+    <button class="nav-btn" routerLink="/products">Produkte</button>
+
+    <div class="dropdown">
+      <button class="nav-btn">Anmelden ▾</button>
+
+      <div class="dropdown-content">
+        <a routerLink="/login">Einloggen</a>
+        <a routerLink="/register">Registrieren</a>
+      </div>
+    </div>
   </div>
 </header>

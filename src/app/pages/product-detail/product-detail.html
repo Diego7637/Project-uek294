@@ -1,0 +1,21 @@
+<div class="detail-wrapper" *ngIf="product() as p">
+  <div class="detail-box">
+
+    <img class="product-image" [src]="p.image" [alt]="p.name">
+
+    <h1 class="name">{{ p.name }}</h1>
+
+    <p class="sku">SKU: {{ p.sku }}</p>
+    <p class="price">{{ p.price }} CHF</p>
+    <p class="stock">Lager: {{ p.stock }}</p>
+
+    <p class="description">{{ p.description }}</p>
+
+    <p class="category">
+      Kategorie: {{ p.category?.name || 'Keine Kategorie' }}
+    </p>
+
+    <button routerLink="/products" class="back-btn">Zu den Produkten</button>
+
+  </div>
+</div>

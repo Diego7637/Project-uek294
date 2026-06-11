@@ -1,1 +1,14 @@
-<p>login works!</p>
+<h2>Login</h2>
+
+<form [formGroup]="form" (ngSubmit)="submit()">
+
+  <label>Email</label>
+  <input type="email" formControlName="email">
+
+  <label>Passwort</label>
+  <input type="password" formControlName="password">
+
+  <button type="submit">Login</button>
+</form>
+
+<a routerLink="/register">Registrieren</a>

@@ -1,0 +1,77 @@
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  padding: 20px;
+}
+.product-image {
+  width: 100%;
+  height: 180px;       // fixe Bildhöhe wie Digitec
+  object-fit: contain; // Bild bleibt vollständig sichtbar
+  margin-bottom: 12px;
+}
+.product-card {
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  height: 360px; // feste Höhe für alle Karten
+}
+.name {
+  font-size: 16px;
+  font-weight: 600;
+  height: 48px; // gleiche Höhe für alle Namen
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sku {
+  font-size: 13px;
+  color: #777;
+  height: 20px;
+}
+
+.price {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1e3a8a;
+  height: 28px;
+}
+
+.stock {
+  font-size: 14px;
+  color: #444;
+  height: 20px;
+}
+.filter-bar {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.filter-btn {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background: #f5f5f5;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.filter-btn.active {
+  background: #1e3a8a;
+  color: white;
+  border-color: #1e3a8a;
+}
+
+.filter-btn:hover {
+  background: #e5e5e5;
+}
+

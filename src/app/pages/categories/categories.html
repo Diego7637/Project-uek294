@@ -1,0 +1,25 @@
+<h2>Kategorien</h2>
+
+<ul class="category-list">
+  <li
+    *ngFor="let c of categories()"
+    (click)="selectCategory(c.id)"
+    [class.active]="c.id === selectedCategoryId()"
+  >
+    {{ c.name }}
+  </li>
+</ul>
+
+<div *ngIf="products().length > 0">
+  <h3>Produkte dieser Kategorie</h3>
+
+  <div class="product-list">
+    <div class="product-card" *ngFor="let p of products()">
+      <img [src]="p.image" alt="{{ p.name }}" />
+      <h4>{{ p.name }}</h4>
+      <p>SKU: {{ p.sku }}</p>
+      <p>Preis: {{ p.price }} CHF</p>
+      <p>Lager: {{ p.stock }}</p>
+    </div>
+  </div>
+</div>

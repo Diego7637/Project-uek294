@@ -1,6 +1,6 @@
 .header {
   width: 100%;
-  background: #bfdbfe;
+  background: darkblue;
   padding: 16px;
   display: flex;
   justify-content: space-between;
@@ -20,4 +20,40 @@
   border: none;
   cursor: pointer;
   font-weight: 600;
+}
+
+/* Dropdown Container */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Inhalt */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background: white;
+  min-width: 140px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  border-radius: 6px;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px 14px;
+  text-decoration: none;
+  color: #1e3a8a;
+  font-weight: 600;
+}
+
+.dropdown-content a:hover {
+  background: #e5e7eb;
+}
+
+/* Dropdown anzeigen beim Hover */
+.dropdown:hover .dropdown-content {
+  display: block;
 }

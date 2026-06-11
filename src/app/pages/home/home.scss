@@ -21,3 +21,32 @@
   cursor: pointer;
   font-weight: 600;
 }
+.video-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: -1;
+}
+.video-container {
+  width: 80%;          // normale Größe
+  max-width: 900px;    // nicht zu groß
+  height: 400px;       // Höhe des Videos
+  margin: 40px auto;   // zentriert unter dem Header
+  overflow: hidden;    // schneidet schwarze Balken weg
+  border-radius: 12px; // optional
+  position: relative;
+}
+
+/* Entfernt schwarze Balken + streckt das Video */
+.video-container iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 160%;   // breiter als Container → kein Rand
+  height: 160%;  // höher als Container → kein Rand
+  transform: translate(-50%, -50%);
+  pointer-events: none; // verhindert Pausieren
+}

@@ -1,10 +1,18 @@
-<h1>Produkte</h1>
+<div class="product-grid">
+  <div
+    class="product-card"
+    *ngFor="let p of products()"
+    [routerLink]="['/products', p.id]"
+  >
 
-<div class="product-list">
-  <div class="product-card" *ngFor="let p of products()">
-    <h2>{{ p.name }}</h2>
-    <p>{{ p.price }} CHF</p>
+    <img
+      class="product-image"
+      [src]="p.image"
+      [alt]="p.name">
 
-    <img *ngIf="p.image" [src]="p.image" [alt]="p.name">
+    <h2 class="name">{{ p.name }}</h2>
+    <p class="sku">SKU: {{ p.sku }}</p>
+    <p class="price">{{ p.price }} CHF</p>
+    <p class="stock">Lager: {{ p.stock }}</p>
   </div>
 </div>
