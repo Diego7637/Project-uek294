@@ -1,0 +1,56 @@
+<h2>User Verwaltung</h2>
+
+<table>
+
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Vorname</th>
+    <th>Nachname</th>
+    <th>E-Mail</th>
+    <th>Admin</th>
+    <th>Aktion</th>
+  </tr>
+  </thead>
+
+  <tbody>
+
+    @for (user of users; track user.id) {
+
+      <tr>
+
+        <td>{{ user.id }}</td>
+
+        <td>{{ user.firstName }}</td>
+
+        <td>{{ user.lastName }}</td>
+
+        <td>{{ user.email }}</td>
+
+        <td>
+          {{ user.isAdmin ? 'Ja' : 'Nein' }}
+        </td>
+
+        <td>
+
+          @if (!user.isAdmin) {
+
+            <button (click)="promote(user)">
+              Admin geben
+            </button>
+
+          } @else {
+
+            <span>Bereits Admin</span>
+
+          }
+
+        </td>
+
+      </tr>
+
+    }
+
+  </tbody>
+
+</table>

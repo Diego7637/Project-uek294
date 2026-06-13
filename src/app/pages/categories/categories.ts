@@ -1,5 +1,5 @@
 import { Component, signal, computed } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 
 import {
   CategoryControllerService,
@@ -8,6 +8,7 @@ import {
   CategoryDetailDto,
   ProductShowDto
 } from '../../openapi-client';
+import {CommonModule} from '@angular/common';
 
 @Component({
   selector: 'app-categories',

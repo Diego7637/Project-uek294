@@ -81,7 +81,7 @@ export class RegisterComponent implements OnInit {
     this.userApi.registerWithoutAdminRights(dto).subscribe({
       next: () => {
         this.toastr.success('Registrierung erfolgreich', 'Erfolg');
-        this.router.navigate(['/auth/login']);
+        this.router.navigate(['/login']);
       },
       error: () => {
         this.toastr.error('Registrierung fehlgeschlagen', 'Fehler');

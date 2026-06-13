@@ -27,7 +27,6 @@ export class ProductsComponent {
   loadProducts(): void {
     this.productApi.getAllProducts().subscribe({
       next: data => this.products.set(data),
-      error: err => console.error(err)
     });
   }
 }

@@ -1,14 +1,26 @@
-<h2>Login</h2>
+<main class="auth-page">
+  <section class="auth-card">
+    <div class="auth-header">
+      <h1>Login</h1>
+    </div>
 
-<form [formGroup]="form" (ngSubmit)="submit()">
+    <form [formGroup]="form" (ngSubmit)="submit()" class="auth-form">
+      <div class="form-field">
+        <label for="email">Email</label>
+        <input id="email" type="email" formControlName="email" autocomplete="email">
+      </div>
 
-  <label>Email</label>
-  <input type="email" formControlName="email">
+      <div class="form-field">
+        <label for="password">Passwort</label>
+        <input id="password" type="password" formControlName="password" autocomplete="current-password">
+      </div>
 
-  <label>Passwort</label>
-  <input type="password" formControlName="password">
+      <button type="submit" class="primary-btn">Login</button>
+    </form>
 
-  <button type="submit">Login</button>
-</form>
-
-<a routerLink="/register">Registrieren</a>
+    <p class="auth-switch">
+      Noch kein Konto?
+      <a routerLink="/register">Registrieren</a>
+    </p>
+  </section>
+</main>

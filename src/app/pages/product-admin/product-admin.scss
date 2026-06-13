@@ -1,0 +1,78 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.admin-layout {
+  display: grid;
+  grid-template-columns: minmax(300px, 360px) minmax(520px, 1fr);
+  gap: 20px;
+  align-items: start;
+}
+
+.product-form-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.product-form-column .create-box {
+  align-self: center;
+  width: 100%;
+  max-width: 320px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+th {
+  background: #1e3a8a;
+  color: white;
+}
+
+.category-box, .create-box, .edit-box {
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.admin-layout .category-box,
+.admin-layout .create-box,
+.admin-layout .edit-box {
+  margin-bottom: 0;
+}
+
+input, select {
+  display: block;
+  margin: 5px 0;
+  padding: 6px;
+  width: 100%;
+  max-width: 250px;
+  box-sizing: border-box;
+}
+
+td input {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+button {
+  margin-right: 8px;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+@media (max-width: 900px) {
+  .admin-layout {
+    grid-template-columns: 1fr;
+  }
+}

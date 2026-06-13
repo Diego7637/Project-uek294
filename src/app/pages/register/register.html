@@ -1,44 +1,75 @@
-<h2>Registrieren</h2>
+<main class="auth-page">
+  <section class="auth-card">
+    <div class="auth-header">
+      <h1>Registrieren</h1>
+    </div>
 
-<form [formGroup]="form">
+    <form [formGroup]="form" class="auth-form">
+      <div class="form-grid">
+        <div class="form-field">
+          <label for="firstName">Vorname</label>
+          <input id="firstName" type="text" formControlName="firstName" autocomplete="given-name">
+        </div>
 
-  <label>Vorname</label>
-  <input type="text" formControlName="firstName">
+        <div class="form-field">
+          <label for="lastName">Nachname</label>
+          <input id="lastName" type="text" formControlName="lastName" autocomplete="family-name">
+        </div>
 
-  <label>Nachname</label>
-  <input type="text" formControlName="lastName">
+        <div class="form-field full-width">
+          <label for="street">Strasse</label>
+          <input id="street" type="text" formControlName="street" autocomplete="street-address">
+        </div>
 
-  <label>Strasse</label>
-  <input type="text" formControlName="street">
+        <div class="form-field short-field">
+          <label for="zip">PLZ</label>
+          <input id="zip" type="text" formControlName="zip" autocomplete="postal-code">
+        </div>
 
-  <label>PLZ</label>
-  <input type="text" formControlName="zip">
+        <div class="form-field">
+          <label for="city">Stadt</label>
+          <input id="city" type="text" formControlName="city" autocomplete="address-level2">
+        </div>
 
-  <label>Stadt</label>
-  <input type="text" formControlName="city">
+        <div class="form-field">
+          <label for="country">Land</label>
+          <input id="country" type="text" formControlName="country" autocomplete="country-name">
+        </div>
 
-  <label>Land</label>
-  <input type="text" formControlName="country">
+        <div class="form-field">
+          <label for="phone">Telefon</label>
+          <input id="phone" type="tel" formControlName="phone" autocomplete="tel">
+        </div>
 
-  <label>Telefon</label>
-  <input type="text" formControlName="phone">
+        <div class="form-field">
+          <label for="mobilePhone">Mobile</label>
+          <input id="mobilePhone" type="tel" formControlName="mobilePhone" autocomplete="tel">
+        </div>
 
-  <label>Mobile</label>
-  <input type="text" formControlName="mobilePhone">
+        <div class="form-field full-width">
+          <label for="email">Email</label>
+          <input id="email" type="email" formControlName="email" autocomplete="email">
+        </div>
 
-  <label>Email</label>
-  <input type="email" formControlName="email">
+        <div class="form-field">
+          <label for="password">Passwort</label>
+          <input id="password" type="password" formControlName="password" autocomplete="new-password">
+        </div>
 
-  <label>Passwort</label>
-  <input type="password" formControlName="password">
+        <div class="form-field">
+          <label for="confirmPassword">Passwort bestätigen</label>
+          <input id="confirmPassword" type="password" formControlName="confirmPassword" autocomplete="new-password">
+        </div>
+      </div>
 
-  <label>Passwort bestätigen</label>
-  <input type="password" formControlName="confirmPassword">
+      <button type="button" class="primary-btn" (click)="submit()">
+        Registrieren
+      </button>
+    </form>
 
-  <button type="button" (click)="submit()">
-    Registrieren
-  </button>
-
-</form>
-
-<a routerLink="/login">Bereits ein Konto?</a>
+    <p class="auth-switch">
+      Bereits ein Konto?
+      <a routerLink="/login">Einloggen</a>
+    </p>
+  </section>
+</main>

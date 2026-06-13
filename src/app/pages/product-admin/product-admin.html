@@ -1,0 +1,158 @@
+<h2>Produkt Verwaltung</h2>
+
+<div class="admin-layout">
+
+  <!-- CATEGORIES -->
+  <div class="category-box">
+
+    <h3>Kategorien</h3>
+
+    <div class="category-create">
+      <input placeholder="Neue Kategorie" [(ngModel)]="newCategoryName">
+
+      <button (click)="createCategory()">
+        Kategorie erstellen
+      </button>
+    </div>
+
+    <table>
+
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Aktionen</th>
+      </tr>
+      </thead>
+
+      <tbody>
+
+        @for (category of categories(); track category.id) {
+
+          <tr>
+
+            <td>{{ category.id }}</td>
+
+            <td>
+              @if (editingCategory?.id === category.id) {
+                <input [(ngModel)]="editingCategory.name">
+              } @else {
+                {{ category.name }}
+              }
+            </td>
+
+            <td>
+              @if (editingCategory?.id === category.id) {
+                <button (click)="saveCategoryRename()">Speichern</button>
+                <button (click)="cancelCategoryRename()">Abbrechen</button>
+              } @else {
+                <button (click)="startRenameCategory(category)">Umbenennen</button>
+              }
+            </td>
+
+          </tr>
+
+        }
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+  <div class="product-form-column">
+
+    <!-- CREATE -->
+    <div class="create-box">
+
+      <h3>Neues Produkt</h3>
+
+      <input placeholder="SKU" [(ngModel)]="newProduct.sku">
+      <input placeholder="Name" [(ngModel)]="newProduct.name">
+      <input placeholder="Image URL" [(ngModel)]="newProduct.image">
+      <input type="number" placeholder="Preis" [(ngModel)]="newProduct.price">
+      <input type="number" placeholder="Stock" [(ngModel)]="newProduct.stock">
+      <select [(ngModel)]="newProduct.categoryId">
+        <option [ngValue]="undefined">Keine Kategorie</option>
+
+        @for (category of categories(); track category.id) {
+          <option [ngValue]="category.id">{{ category.name }}</option>
+        }
+      </select>
+
+      <button (click)="createProduct()">
+        Erstellen
+      </button>
+
+    </div>
+
+    <!-- EDIT -->
+    @if (editingProduct) {
+
+      <div class="edit-box">
+
+        <h3>Produkt bearbeiten</h3>
+
+        <input [(ngModel)]="editingProduct.name">
+        <input [(ngModel)]="editingProduct.sku">
+        <input [(ngModel)]="editingProduct.image">
+        <input type="number" [(ngModel)]="editingProduct.price">
+        <input type="number" [(ngModel)]="editingProduct.stock">
+        <select [(ngModel)]="editingProduct.categoryId">
+          <option [ngValue]="undefined">Keine Kategorie</option>
+
+          @for (category of categories(); track category.id) {
+            <option [ngValue]="category.id">{{ category.name }}</option>
+          }
+        </select>
+
+        <button (click)="saveEdit()">
+          Speichern
+        </button>
+
+      </div>
+
+    }
+
+    <!-- TABLE -->
+    <table>
+
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>SKU</th>
+        <th>Preis</th>
+        <th>Stock</th>
+        <th>Aktionen</th>
+      </tr>
+      </thead>
+
+      <tbody>
+
+        @for (product of products(); track product.id) {
+
+          <tr>
+
+            <td>{{ product.id }}</td>
+            <td>{{ product.name }}</td>
+            <td>{{ product.sku }}</td>
+            <td>{{ product.price }}</td>
+            <td>{{ product.stock }}</td>
+
+            <td>
+              <button (click)="startEdit(product)">Bearbeiten</button>
+              <button (click)="deleteProduct(product.id)">Löschen</button>
+            </td>
+
+          </tr>
+
+        }
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+</div>

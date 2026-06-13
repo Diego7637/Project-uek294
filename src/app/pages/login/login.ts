@@ -25,18 +25,12 @@ export class LoginComponent {
   });
 
   submit(): void {
-    if (this.form.invalid) {
-      this.form.markAllAsTouched();
-      return;
-    }
 
     const dto: LoginRequestDto = {
       email: this.form.value.email!,
       password: this.form.value.password!
     };
-
-    console.log('Login DTO:', dto);
-
+    //async
     this.userApi.login(dto).subscribe({
       next: (res) => {
 
@@ -49,7 +43,7 @@ export class LoginComponent {
           return;
         }
 
-        localStorage.setItem('token', token);
+        localStorage.setItem('AUTH_TOKEN', token);
 
         this.toastr.success('Login erfolgreich', 'Erfolg');
         this.router.navigate(['/']);
